@@ -8,7 +8,7 @@ import java.io.*;
  * @author heng
  * @date 2018-04-17
  */
-public class Teacher implements Serializable {
+public class Teacher implements Externalizable {
 
     private String course;
 
@@ -17,6 +17,8 @@ public class Teacher implements Serializable {
     private String id;
 
     private Integer age;
+
+    public Teacher(){}
 
     private static class InstanceHolder {
         private static final Teacher instatnce = new Teacher("math", "job", "008", 30);
@@ -38,6 +40,22 @@ public class Teacher implements Serializable {
         return this;
     }
 
+    public void writeExternal(ObjectOutput out) throws IOException {
+        System.out.println("teacher writeExternal");
+        out.writeObject(course);
+        out.writeObject(name);
+        out.writeObject(id);
+        out.writeObject(age);
+    }
+
+    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+        System.out.println("teacher readExternal");
+        course = (String) in.readObject();
+        name = (String) in.readObject();
+        id = (String) in.readObject();
+        age = (Integer) in.readObject();
+    }
+
     private void writeObject(ObjectOutputStream out) throws IOException {
         System.out.println("teacher writeObject");
         out.writeObject(course);
@@ -55,6 +73,7 @@ public class Teacher implements Serializable {
     }
 
     private Object readResolve() throws ObjectStreamException {
+        System.out.println("teacher readResolve");
         return InstanceHolder.instatnce;
     }
 
