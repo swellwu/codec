@@ -1,5 +1,7 @@
 package com.swellwu.model;
 
+import com.swellwu.codec.Serializer;
+
 import java.io.*;
 
 /**
@@ -8,7 +10,7 @@ import java.io.*;
  * @author heng
  * @date 2018-04-17
  */
-public class Teacher implements Externalizable {
+public class Teacher implements Serializable {
 
     private String course;
 
@@ -18,7 +20,7 @@ public class Teacher implements Externalizable {
 
     private Integer age;
 
-    public Teacher(){}
+//    public Teacher(){}
 
     private static class InstanceHolder {
         private static final Teacher instatnce = new Teacher("math", "job", "008", 30);
