@@ -17,6 +17,8 @@ public class Classes implements Serializable{
 
     List<Student> studentList;
 
+    public Classes(){}
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

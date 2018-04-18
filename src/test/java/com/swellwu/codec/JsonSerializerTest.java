@@ -6,15 +6,15 @@ import org.junit.Test;
 
 /**
  * <p>Description:</p>
+ * <p>
+ * 没有默认构造函数无法反序列化
  *
  * @author heng
  * @date 2018-04-18
  */
 public class JsonSerializerTest {
 
-    /**
-     * 没有默认构造函数无法反序列化
-     */
+
     @Test
     public void fastJsonSerializerTest() {
         Classes oneClasses = ModelFactory.getOneClasses();

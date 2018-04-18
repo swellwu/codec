@@ -4,6 +4,7 @@ import com.swellwu.model.Classes;
 import com.swellwu.model.Student;
 import com.swellwu.model.Teacher;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -19,7 +20,10 @@ public class ModelFactory {
 
         Student lily = new Student("lily", "001", 18);
         Student bob = new Student("bob", "002", 19);
-        classes.setStudentList(Arrays.asList(new Student[]{lily, bob}));
+        ArrayList<Student> list = new ArrayList<>();
+        list.add(lily);
+        list.add(bob);
+        classes.setStudentList(list);
 
         Teacher teacher = Teacher.getInstance();
         classes.setTeacher(teacher);
