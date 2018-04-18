@@ -43,3 +43,9 @@ Externalizable 接口实现了Serializer接口，并定义了两个接口：writ
 Externalizable和Serializer区别：
 1. Externalizable接口优先，如果实现了Externalizable接口，则序列化和反序列化会调用writeExternal、readExternal。
 2. Externalizable反序列化时，不要要有无参构造函数，Serializer则不需要。
+
+## json
+fast json/jackson 序列化，反序列化时注意类必须要有默认构造函数，否则会抛异常。
+
+## protostuff
+序列化后字节非常小，无需默认构造函数

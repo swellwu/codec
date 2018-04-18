@@ -19,6 +19,7 @@ public class JdkSerializerTest {
     @Test
     public void serializeTest() {
         byte[] bytes = jdkSerializer.serialize(classes);
+        System.out.println("jdk serialize size:" + bytes.length);
         Assert.assertTrue(bytes != null);
         Classes obj = (Classes) jdkSerializer.deserialize(bytes);
         Assert.assertTrue(obj != null);

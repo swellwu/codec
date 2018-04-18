@@ -20,7 +20,8 @@ public class Teacher implements Serializable {
 
     private Integer age;
 
-//    public Teacher(){}
+    // json 反序列化必须要默认构造函数
+    public Teacher(){}
 
     private static class InstanceHolder {
         private static final Teacher instatnce = new Teacher("math", "job", "008", 30);
